@@ -10,6 +10,8 @@
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <link rel="stylesheet" href="Kiosk.css"/>
+                <script src="scripts/jquery-2.2.1.min.js"></script>
+                <script src="scripts/styling.js"></script>
                 <title>Exam Schedule</title>
             </f:facet>
         </h:head>
@@ -18,16 +20,16 @@
 
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+                <p:layoutUnit position="north" size="100" class="header-bar">
+                    This is the header area.
                 </p:layoutUnit>
-
-
-                <p:layoutUnit position="center">
-                    Welcome to Kiosk
+                
+                <p:layoutUnit position="center" style="border:none">
+                    This is the content area.
+                </p:layoutUnit>
+                
+                <p:layoutUnit position="east" size="300">
+                    <h2>Search</h2>
                 </p:layoutUnit>
 
             </p:layout>
