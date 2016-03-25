@@ -33,4 +33,9 @@ $(document).ready( function() {
         "padding":"0",
         "background-color":"rgba(0,0,0,0)"
     });
+    
+    $("#optionsContainer").css({
+        "margin":"0",
+        "padding":"10px"
+    });
 });
