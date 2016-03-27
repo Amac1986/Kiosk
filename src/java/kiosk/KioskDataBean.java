@@ -19,15 +19,22 @@ import javax.enterprise.context.SessionScoped;
 @Named("kioskDataBean")
 public class KioskDataBean implements Serializable {
     private String searchDepartment,
-                   searchId;
+                   searchId,
+                   searchCourseNumber;
     
-    public KioskDataBean() {}
+    public KioskDataBean() {
+        searchDepartment = "";
+        searchId = "";
+    }
     
     public String getSearchDepartment() { return searchDepartment; }
     public void setSearchDepartment(String s) { searchDepartment = s; }
     
     public String getSearchId() { return searchId; }
     public void setSearchId(String s) { searchId = s; }
+    
+    public String getSearchCourseNumber() { return searchCourseNumber; }
+    public void setSearchCourseNumber(String s) { searchCourseNumber = s; }
     
     public List<Exam> getExams() throws ClassNotFoundException, SQLException {
  
@@ -36,7 +43,8 @@ public class KioskDataBean implements Serializable {
         String url = "jdbc:mysql://localhost:3306/uw_kiosk";
         String username = "mhiebert";
         String password = "3060402ACS!";
- 
+        String statement;
+        
         try {
  
             Class.forName("com.mysql.jdbc.Driver");
@@ -48,8 +56,14 @@ public class KioskDataBean implements Serializable {
             System.out.println(sqle.getMessage());
         }
  
-        List<Exam> exams = new ArrayList<Exam>();
-        PreparedStatement pstmt = connect.prepareStatement("SELECT Department, CourseNumber, Term, ExamInfo FROM exams");
+        List<Exam> exams = new ArrayList<>();
+        
+        statement = "SELECT Department, CourseNumber, Term, ExamInfo FROM exams WHERE " +
+                "(CourseNumber LIKE '%" + searchDepartment + "%') AND " +
+                "(CourseNumber LIKE '%" + searchCourseNumber + "%') AND " + 
+                "(EnrolledStudents LIKE '%" + searchId + "%')";
+        
+        PreparedStatement pstmt = connect.prepareStatement(statement);
         ResultSet rs = pstmt.executeQuery();
  
         while (rs.next()) {
@@ -68,6 +82,9 @@ public class KioskDataBean implements Serializable {
         rs.close();
         pstmt.close();
         connect.close();
+        
+        //searchDepartment = "";
+        //searchId = "";
  
         return exams;
  

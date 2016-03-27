@@ -1165,3 +1165,5 @@ INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's an
 INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's and Gender Studies","WGS-3501-002","U2015W","ST: Embodied Subjects M . Owen 1");
 INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's and Gender Studies","WGS-4000-001","U2015FW","WGS Practicum F . Green 3");
 INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's and Gender Studies","WGS-4901-600","U2015W","DR: Embodied Subjects M . Owen 1");
+
+UPDATE exams SET EnrolledStudents="0";
