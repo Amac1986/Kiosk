@@ -1,5 +1,6 @@
 /* 
  * Author: Matt
+ * This script will override PrimeFaces styles when the page loads.
  */
 $(document).ready( function() {
     $(".ui-layout-unit").css({
@@ -37,5 +38,9 @@ $(document).ready( function() {
     $("#optionsContainer").css({
         "margin":"0",
         "padding":"10px"
+    });
+    
+    $(".ui-selectonemenu-list").css({
+        "background-color":"#fff"
     });
 });

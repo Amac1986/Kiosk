@@ -25,7 +25,14 @@
                 </p:layoutUnit>
                 
                 <p:layoutUnit position="center" style="border:none">
-                    This is the content area.
+                    <p:dataList value="#{kioskDataBean.exams}" var="exam" type="unordered" itemType="none" paginator="true" rows="10" styleClass="paginated">
+                        <f:facet name="header">
+                            Exam Schedule
+                        </f:facet>
+                        <b><h:outputText value="#{exam.department}, #{exam.courseNumber}  #{exam.term}" style="display:inline-block"/></b>
+                        <br/>
+                        <h:outputText value="#{exam.examInfo}" style="display:inline-block;text-indent:20px"/>
+                    </p:dataList>
                 </p:layoutUnit>
                 
                 <p:layoutUnit position="east" size="350">
@@ -33,7 +40,7 @@
                     <div id="optionsContainer">
                         <p:outputLabel for="department" value="Browse by Department:" />
                         <br/>
-                        <p:selectOneMenu id="department" value="#{selectOneMenuView.department}" style="width:300px">
+                        <p:selectOneMenu id="department" value="#{kioskDataBean.searchDepartment}" style="width:300px">
                             <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItem itemLabel="Anthropology" itemValue="ANTH" />
                             <f:selectItem itemLabel="Applied Computer Science" itemValue="ACS" />
@@ -44,7 +51,7 @@
                             <f:selectItem itemLabel="Classics" itemValue="CLAS" />
                             <f:selectItem itemLabel="Conflict Resolution Study" itemValue="CRS" />
                             <f:selectItem itemLabel="COOP" itemValue="COOP" />
-                            <f:selectItem itemLabel="Cirminal Justice" itemValue="CJ" />
+                            <f:selectItem itemLabel="Criminal Justice" itemValue="CJ" />
                             <f:selectItem itemLabel="Dance Prog - Theatre &amp; Drama" itemValue="DANC" />
                             <f:selectItem itemLabel="Developmental Studies" itemValue="DEV" />
                             <f:selectItem itemLabel="Disability Studies" itemValue="DIS" />
@@ -82,11 +89,18 @@
                             <f:selectItem itemLabel="Urban &amp; Inner City Studies" itemValue="UIC" />
                             <f:selectItem itemLabel="Women's and Gender Studies" itemValue="WGS" />
                         </p:selectOneMenu>
+                        <br/>
+                        <h3 style="text-align:center">---- OR ----</h3>
+                        <br/>
+                        <p:outputLabel for="studentId" value="Search by student ID:" />
+                        <br/>
+                        <p:keyboard id="studentId" value="#{kioskDataBean.searchId}" maxlength="7" keypadOnly="true" />
+                        <p:button value="Go!"/>
                     </div>
                 </p:layoutUnit>
 
             </p:layout>
-
+            <script>alert("#{kioskDataBean.department}");</script>
         </h:body>
 
     </f:view>
