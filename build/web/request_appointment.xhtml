@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <link rel="stylesheet" href="Kiosk.css"/>
+                <script src="scripts/jquery-2.2.1.min.js"></script>
+                <script src="scripts/styling.js"></script>
+                <title>Request an Appointment</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" class="header-bar">
+                    <p:button outcome="map" value="Campus Map" style="width:200px;font-size:24px;top:20px;left:7%"/>
+                    <p:button outcome="Bulletin" value="Bulletin" style="width:200px;font-size:24px;top:20px;left:14%"/>
+                    <p:button outcome="Calendar" value="Calendar" style="width:200px;font-size:24px;top:20px;left:21%"/>
+                    <p:button outcome="Services" value="Services" style="width:200px;font-size:24px;top:20px;left:28%"/>
+                </p:layoutUnit>
+                
+                <p:layoutUnit position="center">
+                    <h:form>
+                        <h2>Request an Appointment:</h2>
+                        <br/>
+                        <div style="width:550px;margin:auto">
+                            <p:outputLabel for="studentId" value="Student ID:" />
+                            <br/>
+                            <p:keyboard id="studentId" value="#{kioskDataBean.searchId}" maxlength="7" keypadOnly="true" style="width:300px" />
+                            <br/>
+                            <br/>
+                            <p:outputLabel for="appointmentType" value="Appointment Type:" />
+                            <br/>
+                            <p:selectOneMenu id="appointmentType" value="#{kioskDataBean.appointmentType}" style="width:350px">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Degree Planning" itemValue="Degree Planning" />
+                                <f:selectItem itemLabel="Document Printing" itemValue="Document Printing" />
+                                <f:selectItem itemLabel="Document Submission" itemValue="Document Submission" />
+                            </p:selectOneMenu>
+                            <br/>
+                            <br/>
+                            <p:outputLabel for="date" value="Select a date:" />
+                            <br/>
+                            <p:calendar id="date" value="#{kioskDataBean.advisingDate}" mode="popup" showOn="button" mindate="#{kioskDataBean.today}" />
+                            <br/>
+                            <br/>
+                            <p:outputLabel for="grid" value="Select your preferred times:" />
+                            <br/>
+                            <p:selectManyCheckbox id="grid" value="#{kioskDataBean.selectedTimes}" layout="grid" columns="3">
+                                <f:selectItems value="#{kioskDataBean.timeOptions}" var="time" itemLabel="#{time}" itemValue="#{time}" />
+                            </p:selectManyCheckbox>
+                            <br/>
+                            <br/>
+
+                            <p:commandButton value="Request Appointment" type="button" class="show-dialog" style="height:100px;width:300px" onclick="PF('submitted').show()"/>
+                            <p:dialog header="Request Submitted" widgetVar="submitted" minHeight="40">
+                                <h:outputText value="Your request has been submitted to Student Services." />
+                            </p:dialog>
+                        </div>
+                        
+                        
+                    </h:form>
+                </p:layoutUnit>
+                
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+

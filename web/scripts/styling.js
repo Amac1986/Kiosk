@@ -22,7 +22,7 @@ $(document).ready( function() {
         "background-color":"#ccc"
     });
     
-    $(".ui-layout-east h2").css({
+    $(".ui-layout-east h2, .ui-layout-center h2").css({
         "text-align":"center",
         "color":"#fff",
         "background":"#737373",
@@ -35,6 +35,12 @@ $(document).ready( function() {
         "background-color":"rgba(0,0,0,0)"
     });
     
+    $("#contentContainer").css({
+        "width":"80%",
+        "margin":"auto",
+        "padding":"10px"
+    });
+    
     $("#optionsContainer").css({
         "margin":"0",
         "padding":"10px"
@@ -43,4 +49,15 @@ $(document).ready( function() {
     $(".ui-selectonemenu-list").css({
         "background-color":"#fff"
     });
+    
+    /*$(".show-dialog").click(function(e) {
+        $(".appt-dialog").css({
+            "left":"50px",
+            "top":"50px"
+        });
+        
+        $(".appt-dialog").contents().each().css({
+            "visibility":"visible"
+        });
+    });*/
 });
