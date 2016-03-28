@@ -49,11 +49,4 @@ $(document).ready( function() {
     $(".ui-selectonemenu-list").css({
         "background-color":"#fff"
     });
-    
-    $(".service-button").css({
-        "width":"80%",
-        "height":"50px",
-        "font-size":"24px",
-        "margin":"auto"
-    });
 });

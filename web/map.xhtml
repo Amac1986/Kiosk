@@ -10,7 +10,9 @@
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <link rel="stylesheet" href="Kiosk.css"/>
-                <title>Map</title>
+                <script src="scripts/jquery-2.2.1.min.js"></script>
+                <script src="scripts/styling.js"></script>
+                <title>Campus Map</title>
             </f:facet>
         </h:head>
 
@@ -18,15 +20,11 @@
 
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="north" size="0" resizable="false" closable="false" collapsible="false">
-                    <h:form id="navbar">
-                        <p:tabMenu activeIndex="0">
-                            <p:menuitem value="Map" outcome="/map" icon="ui-icon-map"/>
-                            <p:menuitem value="Bulletin" outcome="/Bulletin" icon="ui-icon-search" />
-                            <p:menuitem value="Calendar" outcome="/Calendar" icon="ui-icon-document"/>
-                            <p:menuitem value="Services" outcome="/Services" icon="ui-icon-wrench"/>
-                        </p:tabMenu>
-                    </h:form>
+                <p:layoutUnit position="north" size="100" class="header-bar">
+                    <p:button outcome="map" value="Campus Map" style="width:200px;font-size:24px;top:20px;left:7%"/>
+                    <p:button outcome="Bulletin" value="Bulletin" style="width:200px;font-size:24px;top:20px;left:14%"/>
+                    <p:button outcome="Calendar" value="Calendar" style="width:200px;font-size:24px;top:20px;left:21%"/>
+                    <p:button outcome="Services" value="Services" style="width:200px;font-size:24px;top:20px;left:28%"/>
                 </p:layoutUnit>
 
 
@@ -34,14 +32,20 @@
                     <img width="500px" height="500px" src="campus-traffic-map.gif"/>
                 </p:layoutUnit>
                 
-                <p:layoutUnit position="east" size="250px">
-                    <select name="Building Selection">
-                        <option>Centennial</option>
-                        <option>Buhler</option>
-                        <option>Rice</option>
-                        <option>Anx</option>
-                        <option>Richardson College</option>
-                    </select>
+                <p:layoutUnit position="east" size="350">
+                    <h2>Campus Map</h2>
+                    <div id="optionsContainer">
+                        <br/>
+                        <p:outputLabel for="building" value="Select a building:" />
+                        <br/>
+                        <p:selectOneMenu id="building" value="Building Selection" style="width:300px">
+                            <f:selectItem itemLabel="Centennial" itemValue="Centennial" />
+                            <f:selectItem itemLabel="Buhler" itemValue="Buhler" />
+                            <f:selectItem itemLabel="Rice" itemValue="Rice" />
+                            <f:selectItem itemLabel="AnX" itemValue="AnX" />
+                            <f:selectItem itemLabel="Richardson College" itemValue="Richardson College" />
+                        </p:selectOneMenu>
+                    </div>
                 </p:layoutUnit>
             </p:layout>
 
