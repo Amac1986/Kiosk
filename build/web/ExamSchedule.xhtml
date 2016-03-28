@@ -42,72 +42,70 @@
                     <h2>Filter exams by:</h2>
                     <div id="optionsContainer">
                         <h:form>
-                            <div id="contentContainer">
-                                <p:outputLabel for="studentId" value="Student ID:" />
-                                <br/>
-                                <p:keyboard id="studentId" value="#{kioskDataBean.searchId}" maxlength="7" keypadOnly="true" style="width:300px" />
-                                <br/>
-                                <br/>
-                                <p:outputLabel for="department" value="Department:" />
-                                <br/>
-                                <p:selectOneMenu id="department" value="#{kioskDataBean.searchDepartment}" style="width:300px">
-                                    <f:selectItem itemLabel="All Departments" itemValue="-" />
-                                    <f:selectItem itemLabel="Anthropology" itemValue="ANTH" />
-                                    <f:selectItem itemLabel="Applied Computer Science" itemValue="ACS" />
-                                    <f:selectItem itemLabel="Biology" itemValue="BIOL" />
-                                    <f:selectItem itemLabel="Business &amp; Administration" itemValue="BUS" />
-                                    <f:selectItem itemLabel="Cancer Care Manitoba" itemValue="CCMB" />
-                                    <f:selectItem itemLabel="Chemistry" itemValue="CHEM" />
-                                    <f:selectItem itemLabel="Classics" itemValue="CLAS" />
-                                    <f:selectItem itemLabel="Conflict Resolution Study" itemValue="CRS" />
-                                    <f:selectItem itemLabel="COOP" itemValue="COOP" />
-                                    <f:selectItem itemLabel="Criminal Justice" itemValue="CJ" />
-                                    <f:selectItem itemLabel="Dance Prog - Theatre &amp; Drama" itemValue="DANC" />
-                                    <f:selectItem itemLabel="Developmental Studies" itemValue="DEV" />
-                                    <f:selectItem itemLabel="Disability Studies" itemValue="DIS" />
-                                    <f:selectItem itemLabel="East Asian Language &amp; Cult" itemValue="EALC" />
-                                    <f:selectItem itemLabel="Economics" itemValue="ECON" />
-                                    <f:selectItem itemLabel="Education" itemValue="EDUC" />
-                                    <f:selectItem itemLabel="English" itemValue="ENGL" />
-                                    <f:selectItem itemLabel="Env Studies &amp; Sciences" itemValue="ENV" />
-                                    <f:selectItem itemLabel="French Studies" itemValue="FREN" />
-                                    <f:selectItem itemLabel="Geography" itemValue="GEOG" />
-                                    <f:selectItem itemLabel="German Studies" itemValue="GERM" />
-                                    <f:selectItem itemLabel="History" itemValue="HIST" />
-                                    <f:selectItem itemLabel="Human Rights" itemValue="HR" />
-                                    <f:selectItem itemLabel="Indigenous Studies" itemValue="IS" />
-                                    <f:selectItem itemLabel="Internat Exchange Program" itemValue="INTLEX" />
-                                    <f:selectItem itemLabel="International Dev Studies" itemValue="IDS" />
-                                    <f:selectItem itemLabel="Italian Studies" itemValue="ITAL" />
-                                    <f:selectItem itemLabel="Kinesiology &amp; Applied Health" itemValue="KIN" />
-                                    <f:selectItem itemLabel="Linguistics" itemValue="LING" />
-                                    <f:selectItem itemLabel="Mathematics" itemValue="MATH" />
-                                    <f:selectItem itemLabel="Mennonite Studies" itemValue="MENN" />
-                                    <f:selectItem itemLabel="Modern Language &amp; Literature" itemValue="MOD" />
-                                    <f:selectItem itemLabel="Multidisciplinary" itemValue="MULT" />
-                                    <f:selectItem itemLabel="Music" itemValue="MUS" />
-                                    <f:selectItem itemLabel="Philosophy" itemValue="PHIL" />
-                                    <f:selectItem itemLabel="Physics" itemValue="PHYS" />
-                                    <f:selectItem itemLabel="Political Science" itemValue="POL" />
-                                    <f:selectItem itemLabel="Psychology" itemValue="PSYC" />
-                                    <f:selectItem itemLabel="Religion &amp; Culture" itemValue="REL" />
-                                    <f:selectItem itemLabel="Rhetoric and Communication" itemValue="RHET" />
-                                    <f:selectItem itemLabel="Sociology" itemValue="SOC" />
-                                    <f:selectItem itemLabel="Spanish Studies" itemValue="SPAN" />
-                                    <f:selectItem itemLabel="Statistics" itemValue="STAT" />
-                                    <f:selectItem itemLabel="Theatre &amp; Film" itemValue="THFM" />
-                                    <f:selectItem itemLabel="Urban &amp; Inner City Studies" itemValue="UIC" />
-                                    <f:selectItem itemLabel="Women's and Gender Studies" itemValue="WGS" />
-                                </p:selectOneMenu>
-                                <br/>
-                                <br/>
-                                <p:outputLabel for="courseNumber" value="Course Number:" />
-                                <br/>
-                                <p:keyboard id="courseNumber" value="#{kioskDataBean.searchCourseNumber}" maxlength="15" style="width:300px" />
-                                <br/>
-                                <br/>
-                                <p:commandButton action="submit" value="Find Exams" ajax="false" style="height:100px;width:300px" />
-                            </div>
+                            <p:outputLabel for="studentId" value="Student ID:" />
+                            <br/>
+                            <p:keyboard id="studentId" value="#{kioskDataBean.searchId}" maxlength="7" keypadOnly="true" style="width:300px" />
+                            <br/>
+                            <br/>
+                            <p:outputLabel for="department" value="Department:" />
+                            <br/>
+                            <p:selectOneMenu id="department" value="#{kioskDataBean.searchDepartment}" style="width:300px">
+                                <f:selectItem itemLabel="All Departments" itemValue="-" />
+                                <f:selectItem itemLabel="Anthropology" itemValue="ANTH" />
+                                <f:selectItem itemLabel="Applied Computer Science" itemValue="ACS" />
+                                <f:selectItem itemLabel="Biology" itemValue="BIOL" />
+                                <f:selectItem itemLabel="Business &amp; Administration" itemValue="BUS" />
+                                <f:selectItem itemLabel="Cancer Care Manitoba" itemValue="CCMB" />
+                                <f:selectItem itemLabel="Chemistry" itemValue="CHEM" />
+                                <f:selectItem itemLabel="Classics" itemValue="CLAS" />
+                                <f:selectItem itemLabel="Conflict Resolution Study" itemValue="CRS" />
+                                <f:selectItem itemLabel="COOP" itemValue="COOP" />
+                                <f:selectItem itemLabel="Criminal Justice" itemValue="CJ" />
+                                <f:selectItem itemLabel="Dance Prog - Theatre &amp; Drama" itemValue="DANC" />
+                                <f:selectItem itemLabel="Developmental Studies" itemValue="DEV" />
+                                <f:selectItem itemLabel="Disability Studies" itemValue="DIS" />
+                                <f:selectItem itemLabel="East Asian Language &amp; Cult" itemValue="EALC" />
+                                <f:selectItem itemLabel="Economics" itemValue="ECON" />
+                                <f:selectItem itemLabel="Education" itemValue="EDUC" />
+                                <f:selectItem itemLabel="English" itemValue="ENGL" />
+                                <f:selectItem itemLabel="Env Studies &amp; Sciences" itemValue="ENV" />
+                                <f:selectItem itemLabel="French Studies" itemValue="FREN" />
+                                <f:selectItem itemLabel="Geography" itemValue="GEOG" />
+                                <f:selectItem itemLabel="German Studies" itemValue="GERM" />
+                                <f:selectItem itemLabel="History" itemValue="HIST" />
+                                <f:selectItem itemLabel="Human Rights" itemValue="HR" />
+                                <f:selectItem itemLabel="Indigenous Studies" itemValue="IS" />
+                                <f:selectItem itemLabel="Internat Exchange Program" itemValue="INTLEX" />
+                                <f:selectItem itemLabel="International Dev Studies" itemValue="IDS" />
+                                <f:selectItem itemLabel="Italian Studies" itemValue="ITAL" />
+                                <f:selectItem itemLabel="Kinesiology &amp; Applied Health" itemValue="KIN" />
+                                <f:selectItem itemLabel="Linguistics" itemValue="LING" />
+                                <f:selectItem itemLabel="Mathematics" itemValue="MATH" />
+                                <f:selectItem itemLabel="Mennonite Studies" itemValue="MENN" />
+                                <f:selectItem itemLabel="Modern Language &amp; Literature" itemValue="MOD" />
+                                <f:selectItem itemLabel="Multidisciplinary" itemValue="MULT" />
+                                <f:selectItem itemLabel="Music" itemValue="MUS" />
+                                <f:selectItem itemLabel="Philosophy" itemValue="PHIL" />
+                                <f:selectItem itemLabel="Physics" itemValue="PHYS" />
+                                <f:selectItem itemLabel="Political Science" itemValue="POL" />
+                                <f:selectItem itemLabel="Psychology" itemValue="PSYC" />
+                                <f:selectItem itemLabel="Religion &amp; Culture" itemValue="REL" />
+                                <f:selectItem itemLabel="Rhetoric and Communication" itemValue="RHET" />
+                                <f:selectItem itemLabel="Sociology" itemValue="SOC" />
+                                <f:selectItem itemLabel="Spanish Studies" itemValue="SPAN" />
+                                <f:selectItem itemLabel="Statistics" itemValue="STAT" />
+                                <f:selectItem itemLabel="Theatre &amp; Film" itemValue="THFM" />
+                                <f:selectItem itemLabel="Urban &amp; Inner City Studies" itemValue="UIC" />
+                                <f:selectItem itemLabel="Women's and Gender Studies" itemValue="WGS" />
+                            </p:selectOneMenu>
+                            <br/>
+                            <br/>
+                            <p:outputLabel for="courseNumber" value="Course Number:" />
+                            <br/>
+                            <p:keyboard id="courseNumber" value="#{kioskDataBean.searchCourseNumber}" maxlength="15" style="width:300px" />
+                            <br/>
+                            <br/>
+                            <p:commandButton action="submit" value="Find Exams" ajax="false" style="height:100px;width:300px" />
                         </h:form>
                     </div>
                 </p:layoutUnit>

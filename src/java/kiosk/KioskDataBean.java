@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author Matt
  */
-@RequestScoped
+@SessionScoped
 @Named("kioskDataBean")
 public class KioskDataBean implements Serializable {
     private String searchDepartment,

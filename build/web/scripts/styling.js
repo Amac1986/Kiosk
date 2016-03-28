@@ -50,14 +50,10 @@ $(document).ready( function() {
         "background-color":"#fff"
     });
     
-    /*$(".show-dialog").click(function(e) {
-        $(".appt-dialog").css({
-            "left":"50px",
-            "top":"50px"
-        });
-        
-        $(".appt-dialog").contents().each().css({
-            "visibility":"visible"
-        });
-    });*/
+    $(".service-button").css({
+        "width":"80%",
+        "height":"50px",
+        "font-size":"24px",
+        "margin":"auto"
+    });
 });
