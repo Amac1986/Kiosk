@@ -1167,3 +1167,6 @@ INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's an
 INSERT INTO exams (Department, CourseNumber, Term, ExamInfo) VALUES ("Women's and Gender Studies","WGS-4901-600","U2015W","DR: Embodied Subjects M . Owen 1");
 
 UPDATE exams SET EnrolledStudents="0";
+UPDATE exams SET EnrolledStudents="1149030" WHERE CourseNumber="ACS-2916-001" OR CourseNumber="ACS-2941-001" OR CourseNumber="ACS-2947-050";
+UPDATE exams SET EnrolledStudents="3060402" WHERE CourseNumber="ACS-3913-001" OR CourseNumber="ACS-3923-050" OR CourseNumber="PSYC-1000-008";
+UPDATE exams SET EnrolledStudents="1149030,3060402" WHERE CourseNumber="ACS-3909-001" OR CourseNumber="ACS-3916-001";

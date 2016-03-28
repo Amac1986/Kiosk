@@ -53,9 +53,9 @@ public class KioskDataBean implements Serializable {
  
         Connection connect = null;
  
-        String url = "jdbc:mysql://localhost:3306/uw_kiosk";
-        String username = "mhiebert";
-        String password = "3060402ACS!";
+        String url = "jdbc:mysql://localhost:3306/uw_kiosk"; // Set database name here
+        String username = "mhiebert"; // Set username here
+        String password = "3060402ACS!"; // Set password here
         String statement;
         
         try {
